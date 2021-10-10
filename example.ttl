@@ -1,0 +1,44 @@
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<#dictionary> a lime:Lexicon ;
+    lime:language "en" ;
+    dc:license <http://www.example.com/license> ;
+    dc:title "Ontolex Turtle Example Dictionary" ;
+    dc:description "Contains a few entries for testing" ;
+    dc:creator [
+        foaf:name "Max Lexicographer" ;
+        foaf:mbox <mailto:max@localhost> ;
+        foaf:homepage <http://www.example.com/>
+    ] ;
+    dc:publisher "ELEXIS" ;
+    dc:publisher [ foaf:name "Example Publisher" ] ;
+    lime:entry <#cat-n>, <#cat-v> .
+
+<#cat-n> a ontolex:Word ;
+    lexinfo:partOfSpeech lexinfo:commonNoun ;
+    ontolex:canonicalForm [ ontolex:writtenRep "cat"@en, "mačka"@sl ] ;
+    ontolex:otherForm [ ontolex:writtenRep "🐈"@en, "🐈"@sl ] ;
+    ontolex:sense <#cat-n-1>, <#cat-n-2> .
+
+<#cat-n-1> a ontolex:LexicalSense ;
+    skos:definition "a type of animal"@en, "vrsta živali"@sl ;
+    ontolex:reference <http://dbpedia.org/page/Cat> .
+
+<#cat-n-2> a ontolex:LexicalSense ;
+    skos:definition "an attractive woman"@en, "privlačna ženska"@sl .
+
+<#cat-v> a ontolex:Word ;
+    lexinfo:partOfSpeech lexinfo:verb ;
+    ontolex:canonicalForm [ ontolex:writtenRep "cat"@en ] ;
+    ontolex:sense <#cat-v-1>, <#cat-v-2> .
+
+<#cat-v-1> a ontolex:LexicalSense ;
+    skos:definition "print contents of a computer file"@en .
+
+<#cat-v-2> a ontolex:LexicalSense ;
+    skos:definition "raise (an anchor) from the surface of the water to the cathead"@en .

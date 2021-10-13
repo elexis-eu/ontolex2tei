@@ -9,7 +9,7 @@ with input constraints and/or assumptions roughly as defined by [ELEXIS D2.1 § 
 Installation
 ------------
 ```
-pip install lxml rdflib
+pip install -r requirements.txt
 ```
 
 Usage
